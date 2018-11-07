@@ -20,6 +20,7 @@ namespace Fence.DataAccess
         public UserAndMessagesEntities()
             : base("name=UserAndMessagesEntities")
         {
+            SeedData.Initialize(this);
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
