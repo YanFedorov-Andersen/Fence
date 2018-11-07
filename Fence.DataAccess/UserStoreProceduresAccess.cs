@@ -14,12 +14,11 @@ namespace Fence.DataAccess
             _modelContext = new UserAndMessagesEntities();
         }
 
-        public List<UserEntity> GetUsers()
+        public async Task<List<UserEntity>> GetUsers()
         {
             var result = _modelContext.Database.SqlQuery<UserEntity>("EXEC GetAllUsers");
-            var usersList = result.ToListAsync().Result;
 
-            return usersList;
+            return await result.ToListAsync();
         }
 
         public async Task<int> UpdateUser(UserEntity user)
@@ -30,12 +29,7 @@ namespace Fence.DataAccess
             }
 
             var result = _modelContext.Database.SqlQuery<int>("EXEC UpdateUserEntity @userId, @firstName, @lastName, @DateOfBirth, @Username", new SqlParameter("@UserId", user.Id), new SqlParameter("@firstName", user.FirstName), new SqlParameter("@LastName", user.LastName), new SqlParameter("@DateOfBirth", user.DateOfBirth), new SqlParameter("@Username", user.Username)
-                );
-
-            if (result == null)
-            {
-                throw new Exception("");
-            }   
+                ); 
             
             return await result.SingleAsync();
         }

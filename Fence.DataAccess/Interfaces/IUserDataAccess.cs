@@ -5,7 +5,7 @@ namespace Fence.DataAccess.Interfaces
 {
     public interface IUserDataAccess
     {
-        List<UserEntity> GetUsers();
+        Task<List<UserEntity>> GetUsers();
         Task<int> UpdateUser(UserEntity user);
         Task<UserEntity> GetUser(int id);
         Task<int> CreateUser(UserEntity user);
