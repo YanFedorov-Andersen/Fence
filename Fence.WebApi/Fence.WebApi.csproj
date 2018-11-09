@@ -113,6 +113,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Builder.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -129,7 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +140,10 @@
     <ProjectReference Include="..\Fence.DataAccess\Fence.DataAccess.csproj">
       <Project>{6bb3dc31-dd27-44c7-bce6-a6775c39b13e}</Project>
       <Name>Fence.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fence.Domain\Fence.Domain.csproj">
+      <Project>{38D250B4-213D-4BF0-8EC3-BB2BE28B45F6}</Project>
+      <Name>Fence.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
