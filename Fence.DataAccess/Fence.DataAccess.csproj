@@ -53,8 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IMessageDataAccess.cs" />
     <Compile Include="Interfaces\IUserDataAccess.cs" />
+    <Compile Include="MessageStoreProceduresAccess.cs" />
     <Compile Include="SeedData.cs" />
+    <Compile Include="UserAndMessage.cs" />
     <Compile Include="UserStoreProceduresAccess.cs" />
     <Compile Include="FenceDbModels.Context.cs">
       <AutoGen>True</AutoGen>
